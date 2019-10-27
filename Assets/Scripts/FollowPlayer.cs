@@ -9,6 +9,6 @@ public class FollowPlayer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position + new Vector3(0, 3, -10), 5f * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, player.transform.position + new Vector3(0, 3, -10), 10f * Time.deltaTime);
     }
 }

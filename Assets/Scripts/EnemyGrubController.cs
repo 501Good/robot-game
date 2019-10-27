@@ -10,8 +10,6 @@ public class EnemyGrubController : MonoBehaviour
     Transform myTrans;
     float myWidth;
 
-    [SerializeField]
-    private int health = 20;
 
     private void Start()
     {
@@ -43,21 +41,26 @@ public class EnemyGrubController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Platform ground edge check
         Vector2 LineCastPos = myTrans.position - myTrans.right * myWidth;
         Debug.DrawLine(LineCastPos, LineCastPos + Vector2.down);
         bool isgrounded = Physics2D.Linecast(LineCastPos, LineCastPos + Vector2.down *2, enemyMask);
         if (!isgrounded) Flip();
-    }
 
-    public void TakeDamage(int dam)
-    {
-        health -= dam;
-
-        if (health <= 0) Destroy(this.gameObject);
+        // Running into wall check
+        Vector2 WallLineCastPos = myTrans.position - myTrans.right * myWidth;
+        Debug.DrawLine(WallLineCastPos, WallLineCastPos + Vector2.left);
+        bool isWall = Physics2D.Linecast(LineCastPos, LineCastPos + Vector2.left*0.2f, enemyMask);
+        if (isWall) Flip();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) collision.SendMessageUpwards("TakeDamage", 10);
+    }
+
+    private void Death()
+    {
+        Destroy(this.gameObject);
     }
 }

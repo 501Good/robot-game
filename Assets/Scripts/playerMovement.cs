@@ -124,4 +124,9 @@ public class playerMovement : MonoBehaviour
             invincibleTimer = invincibleCD;
         }
     }
+
+    void Death()
+    {
+        Debug.Log("You're dead");
+    }
 }
