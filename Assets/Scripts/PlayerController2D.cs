@@ -70,6 +70,8 @@ public class PlayerController2D : MonoBehaviour
 
     public LayerMask whatIsGround;
 
+    private SpriteRenderer _spriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -77,6 +79,7 @@ public class PlayerController2D : MonoBehaviour
         anim = GetComponent<Animator>();
         amountOfJumpsLeft = amountOfJumps;
         wallJumpDirection.Normalize();
+        _spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -94,6 +97,12 @@ public class PlayerController2D : MonoBehaviour
     {
         ApplyMovement();
         CheckSurroundings();
+    }
+
+    public void SetColor(Color color)
+    {
+        _spriteRenderer.color = color;
+        Debug.Log(_spriteRenderer.color);
     }
 
     //Check if Character is currently Wall Sliding
