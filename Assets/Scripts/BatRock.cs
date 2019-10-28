@@ -45,7 +45,8 @@ public class BatRock : MonoBehaviour
 
     private void Break()
     {
-        animator.SetBool("Broken", true);
+        if(animator)
+            animator.SetBool("Broken", true);
         Invoke("Death", 1f);
 
     }
