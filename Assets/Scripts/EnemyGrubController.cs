@@ -6,7 +6,6 @@ public class EnemyGrubController : MonoBehaviour
 {
     public LayerMask enemyMask;
     public float speed;
-    Rigidbody2D rigidbody2D;
     Transform myTrans;
     float myWidth;
 
@@ -14,7 +13,6 @@ public class EnemyGrubController : MonoBehaviour
     private void Start()
     {
         myTrans = this.transform;
-        rigidbody2D = this.GetComponent<Rigidbody2D>();
         myWidth = this.GetComponent<SpriteRenderer>().bounds.extents.x;
     }
 
