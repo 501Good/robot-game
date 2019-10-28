@@ -49,3 +49,6 @@ TagManager:
   - name: New Layer
     uniqueID: 2453092287
     locked: 0
+  - name: Characters
+    uniqueID: 720536187
+    locked: 0
