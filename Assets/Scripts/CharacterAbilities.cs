@@ -45,11 +45,13 @@ public class CharacterAbilities : MonoBehaviour
         {
             Debug.Log("1");
             PlayerPrefab.jumpForce = 35.0f;
+            PlayerPrefab.amountOfJumps = 1;
             PlayerPrefab.SetColor(new Color(255f / 255.0f, 255f / 255.0f, 255f / 255.0f, 1f));
         } else if (type == 2)
         {
             Debug.Log("2");
-            PlayerPrefab.jumpForce = 50.0f;
+            PlayerPrefab.jumpForce = 40.0f;
+            PlayerPrefab.amountOfJumps = 2;
             PlayerPrefab.SetColor(new Color(233f / 255.0f, 91f / 255.0f, 91f / 255.0f, 1f));
         }
     }

@@ -240,7 +240,7 @@ public class PlayerController2D : MonoBehaviour
             {
                 WallJump();
             }
-            else if (isGrounded)
+            else if (isGrounded || amountOfJumpsLeft > 0)
             {
                 NormalJump();
             }
