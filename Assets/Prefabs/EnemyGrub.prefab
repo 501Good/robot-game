@@ -72,7 +72,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -95,15 +94,15 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1841875009
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1738074870589451263, guid: b841fc76ca80db044a664e3ecc69f79f,
+  m_Sprite: {fileID: -1738074870589451263, guid: c3536e899703e0f439540e38fba88bb1,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.43, y: 1.06}
+  m_Size: {x: 1.84375, y: 0.53125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -122,8 +121,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.66}
-  m_Size: {x: 2.69, y: 1.06}
+  m_Offset: {x: 0.010548788, y: -0.3593202}
+  m_Size: {x: 2.289102, y: 1.2815539}
   m_Direction: 1
 --- !u!114 &1383180483
 MonoBehaviour:
@@ -151,7 +150,7 @@ Animator:
   m_GameObject: {fileID: 2964549349827203214}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 14f96ab3cfe81ff458fc3bc83c782c53, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1f96055d905417b4381452a5b760b381, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -173,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
+  text: {fileID: 0}
 --- !u!68 &7502811001831069550
 EdgeCollider2D:
   m_ObjectHideFlags: 0

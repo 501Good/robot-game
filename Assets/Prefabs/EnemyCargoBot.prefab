@@ -52,7 +52,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -74,16 +73,16 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1841875009
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -780706302557042328, guid: ab54fe9412d945d4d8309cce1631f4d5,
+  m_Sprite: {fileID: -780706302557042328, guid: 49172e8f2698f6b48abac8dc41cbf12e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.4615386, y: 2.4615386}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -122,7 +121,7 @@ Animator:
   m_GameObject: {fileID: 6241269408725385309}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 59737d4b6a2864743a188121e761105b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 75ed719369c3d11439ac9fd2261bcf63, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -162,9 +161,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.72}
+  m_Offset: {x: 0, y: -0.5619481}
   serializedVersion: 2
-  m_Radius: 0.62
+  m_Radius: 0.4619481
 --- !u!114 &6211316339501827034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,6 +266,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7446845124251244328}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cabca769ba225af4f95c0a675436d72f, type: 3}
+  m_Script: {fileID: 11500000, guid: 43fd239da9ecf3242920c0c3bd18610e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
