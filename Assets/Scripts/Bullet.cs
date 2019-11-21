@@ -44,9 +44,13 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Ground"))
+            Destroy(this.gameObject);
         Debug.Log(collision.tag);
-        var hp = collision.GetComponent<Health>();
-        if (hp != null && !collision.CompareTag("Player"))
+        //var hp = collision.GetComponent<Health>();
+
+        
+        if (/*hp != null && */!collision.CompareTag("Player"))
         {
             collision.SendMessage("TakeDamage", 10);
             Destroy(this.gameObject);

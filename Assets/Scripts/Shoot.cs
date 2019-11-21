@@ -8,6 +8,9 @@ public class Shoot : MonoBehaviour
 
     private PlayerController2D playerController;
 
+    public float ShootingCD = 1f;
+    private float _shootingTimer = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +20,9 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        _shootingTimer -= Time.deltaTime;
+
+        if (Input.GetButtonDown("Fire1") && _shootingTimer <= 0f)
         {
             Debug.Log("Shooting");
             ShootBullet();
@@ -29,7 +34,7 @@ public class Shoot : MonoBehaviour
         Bullet bullet = GameObject.Instantiate<Bullet>(BulletPrefab, null);
         bullet.transform.position = this.transform.position;
         bullet.SetForwardDir(playerController.GetFacingDirection());
-        
-        
+
+        _shootingTimer = ShootingCD;
     }
 }

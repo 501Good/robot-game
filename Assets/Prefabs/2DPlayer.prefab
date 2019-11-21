@@ -167,9 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af860db84b4f40440b9dcbfff3390ffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountOfJumps: 3
+  amountOfJumps: 1
   movementSpeed: 8
-  jumpForce: 35
+  jumpForce: 25
   groundCheckRadius: 0.3
   wallCheckDistance: 0.65
   wallSlideSpeed: 1
@@ -200,6 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 8844509298803496188, guid: 5371102c2180ae7418cfec2e1047e8a4,
     type: 3}
+  ShootingCD: 0.5
 --- !u!114 &353361654
 MonoBehaviour:
   m_ObjectHideFlags: 0

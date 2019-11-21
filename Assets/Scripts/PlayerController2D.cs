@@ -176,10 +176,11 @@ public class PlayerController2D : MonoBehaviour
     //Apply current Animation State
     private void UpdateAnimations()
     {
-        anim.SetBool("isWalking", isWalking);
-        anim.SetBool("isGrounded", isGrounded);
-        anim.SetFloat("yVelocity", rb.velocity.y);
-        anim.SetBool("isWallSliding", isWallSliding);
+        // ######################################################################## Temporarily disabled
+        //anim.SetBool("isWalking", isWalking);
+        //anim.SetBool("isGrounded", isGrounded);
+        //anim.SetFloat("yVelocity", rb.velocity.y);
+        //anim.SetBool("isWallSliding", isWallSliding);
     }
 
     //Check which Inputs were taken
