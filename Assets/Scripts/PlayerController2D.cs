@@ -163,7 +163,7 @@ public class PlayerController2D : MonoBehaviour
             Flip();
         }
 
-        if (rb.velocity.x != 0)
+        if (Input.GetAxisRaw("Horizontal") != 0)
         {
             isWalking = true;
         }
@@ -177,8 +177,8 @@ public class PlayerController2D : MonoBehaviour
     private void UpdateAnimations()
     {
         // ######################################################################## Temporarily disabled
-        //anim.SetBool("isWalking", isWalking);
-        //anim.SetBool("isGrounded", isGrounded);
+        anim.SetBool("isWalking", isWalking);
+        anim.SetBool("isGrounded", isGrounded);
         //anim.SetFloat("yVelocity", rb.velocity.y);
         //anim.SetBool("isWallSliding", isWallSliding);
     }
@@ -275,6 +275,7 @@ public class PlayerController2D : MonoBehaviour
     {
         if (canNormalJump)
         {
+            anim.SetTrigger("takeOf");
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             amountOfJumpsLeft--;
             jumpTimer = 0;
