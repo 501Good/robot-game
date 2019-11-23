@@ -176,7 +176,7 @@ MonoBehaviour:
   movementForceInAir: 50
   airDragMultiplier: 0.95
   variableJumpHeightMultiplier: 0.5
-  wallJumpForce: 35
+  wallJumpForce: 25
   jumpTimerSet: 0.15
   turnTimerSet: 0.1
   wallJumpTimerSet: 0.1

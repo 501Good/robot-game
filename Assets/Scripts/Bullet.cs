@@ -45,7 +45,11 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Ground"))
-            Destroy(this.gameObject);
+        {
+            this.speed = 0;
+
+            this.gameObject.GetComponent<Animator>().SetTrigger("BlowUp");
+        }
         Debug.Log(collision.tag);
         //var hp = collision.GetComponent<Health>();
 
@@ -53,7 +57,8 @@ public class Bullet : MonoBehaviour
         if (/*hp != null && */!collision.CompareTag("Player"))
         {
             collision.SendMessage("TakeDamage", 10);
-            Destroy(this.gameObject);
+            this.speed = 0;
+            this.gameObject.GetComponent<Animator>().SetTrigger("BlowUp");
         }
     }
 

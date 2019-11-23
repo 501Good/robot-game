@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 6948166305601908818}
   - component: {fileID: 8304119442973819086}
   - component: {fileID: 7275393350638153880}
-  - component: {fileID: 1383180483}
   - component: {fileID: 216264435}
   - component: {fileID: 216264438}
   - component: {fileID: 7502811001831069550}
+  - component: {fileID: 8967312612804017220}
   m_Layer: 10
   m_Name: EnemyGrub
   m_TagString: Enemy
@@ -93,7 +93,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1841875009
+  m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1738074870589451263, guid: c3536e899703e0f439540e38fba88bb1,
@@ -118,28 +118,12 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.010548788, y: -0.3593202}
   m_Size: {x: 2.289102, y: 1.2815539}
   m_Direction: 1
---- !u!114 &1383180483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2964549349827203214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c6079b7ee1ee1143b2b3a971ae72def, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyMask:
-    serializedVersion: 2
-    m_Bits: 256
-  speed: 2.5
 --- !u!95 &216264435
 Animator:
   serializedVersion: 3
@@ -186,8 +170,25 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.21}
   m_EdgeRadius: 0
   m_Points:
   - {x: -1.1, y: -1.2}
   - {x: 1.1, y: -1.2}
+--- !u!114 &8967312612804017220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2964549349827203214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04e2dd4af2649642b1998392bbe98ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentEnemyType: 2
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 256
+  speed: 2.5
