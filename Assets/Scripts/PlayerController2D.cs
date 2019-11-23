@@ -163,7 +163,7 @@ public class PlayerController2D : MonoBehaviour
             Flip();
         }
 
-        if (rb.velocity.x != 0)
+        if (Input.GetAxisRaw("Horizontal") != 0)
         {
             isWalking = true;
         }
