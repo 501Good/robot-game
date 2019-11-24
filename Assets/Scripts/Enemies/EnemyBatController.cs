@@ -49,13 +49,13 @@ public class EnemyBatController : MonoBehaviour
         else
             targetX = player.transform.position.x;
 
-        //If has rock and over player, drop it
-        if (HasRock && Mathf.Abs(transform.position.x - player.transform.position.x) < 0.01f)
-            DropRock();
+            //If has rock and over player, drop it
+            if (HasRock && Mathf.Abs(transform.position.x - player.transform.position.x) < 0.01f)
+                DropRock();
 
-        //If there is no rock, it will be spawned after cd
-        if (!HasRock && RockTimer > 0f)
-            RockTimer -= Time.deltaTime;
+            //If there is no rock, it will be spawned after cd
+            if (!HasRock && RockTimer > 0f)
+                RockTimer -= Time.deltaTime;
         else if (!HasRock && RockTimer <= 0f)
         {
             HasRock = true;

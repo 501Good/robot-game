@@ -41,10 +41,10 @@ GameObject:
   - component: {fileID: 7342544268494690417}
   - component: {fileID: 4065972074019939499}
   - component: {fileID: 6384625367971009219}
-  - component: {fileID: 8633670450485733070}
   - component: {fileID: 716398554}
   - component: {fileID: 3322605413817276379}
-  m_Layer: 0
+  - component: {fileID: 3437085069380760909}
+  m_Layer: 10
   m_Name: EnemyBat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -135,29 +135,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8633670450485733070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1870911430446245292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4d1829edbe51044ea354187e7f06307, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 256
-  HasRock: 0
-  RockCD: 4
-  bobHeight: 1
-  RockSpawnPosition: {fileID: 5920498898991642866}
-  RockPrefab: {fileID: 9137076243998991563, guid: eb7689c6adb546a40bc449c4c49f67e4,
-    type: 3}
-  playerFound: 0
 --- !u!114 &716398554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,9 +159,29 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &3437085069380760909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870911430446245292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04e2dd4af2649642b1998392bbe98ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentEnemyType: 1
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 256
+  speed: 4
+  lookingRight: 0
+  BatRockPrefab: {fileID: 9137076243998991563, guid: eb7689c6adb546a40bc449c4c49f67e4,
+    type: 3}

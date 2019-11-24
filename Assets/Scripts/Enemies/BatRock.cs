@@ -24,42 +24,32 @@ public class BatRock : MonoBehaviour
         if (deathTimer > 0)
             deathTimer -= Time.deltaTime;
         else
-            Death();
+            animator.SetTrigger("Break");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && !breaking)
+        if (!breaking)
         {
-            breaking = true;
-            Break();
-            collision.SendMessage("TakeDamage", damage);
+            if (collision.CompareTag("Player"))
+            {
+                breaking = true;
+                animator.SetTrigger("Break");
+                Events.PlayerChangeHealth(Events.PlayerRequestHealth() - damage);
+            }
+            else if (collision.CompareTag("Ground"))
+            {
+                breaking = true;
+                animator.SetTrigger("Break");
+            }
         }
-        else if(collision.CompareTag("Ground") && !breaking)
-        {
-            breaking = true;
-            Break();
-        }
-    }
-
-
-    private void Break()
-    {
-        if(animator)
-            animator.SetBool("Broken", true);
-        Invoke("Death", 1f);
-
-    }
-
-    void Death()
-    {
-        Destroy(this.gameObject);
+        
     }
 
     public void TakeDamage(int dam)
     {
         breaking = true;
-        Break();
+        animator.SetTrigger("Break");
     }
 
 

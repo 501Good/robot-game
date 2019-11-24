@@ -5,7 +5,7 @@ using UnityEngine;
 
 public enum enemyType
 {
-    CargoBot, Bat, Worm
+    CargoBot, Bat, Worm, NaN
 }
 public class EnemyController : MonoBehaviour
 {
@@ -17,6 +17,8 @@ public class EnemyController : MonoBehaviour
     // Movement
     public LayerMask groundMask;
     public float speed;
+    public bool lookingRight = false;
+    public GameObject BatRockPrefab;
 
 
     private void Awake()
@@ -27,8 +29,10 @@ public class EnemyController : MonoBehaviour
                 ChangeState(new EnemyWormPatrolState());
                 break;
             case enemyType.Bat:
+                ChangeState(new EnemyBatPatrolState());
                 break;
             case enemyType.CargoBot:
+                ChangeState(new EnemyLoaderPatrolState());
                 break;
             default:
                 Debug.LogError("This EnemyController state has not been implemented: " + CurrentEnemyType);

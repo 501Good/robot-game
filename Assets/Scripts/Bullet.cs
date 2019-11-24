@@ -54,7 +54,7 @@ public class Bullet : MonoBehaviour
         //var hp = collision.GetComponent<Health>();
 
         
-        if (/*hp != null && */!collision.CompareTag("Player"))
+        if (!collision.CompareTag("Player"))
         {
             collision.SendMessage("TakeDamage", 10);
             this.speed = 0;

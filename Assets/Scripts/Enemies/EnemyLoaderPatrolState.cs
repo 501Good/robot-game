@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWormPatrolState : IEnemyState
+public class EnemyLoaderPatrolState : IEnemyState
 {
     private EnemyController parent;
-    private float myWidth;
+
     private float speed;
+    private float myWidth;
 
     public void Enter(EnemyController parent)
     {
         this.parent = parent;
+        this.speed = parent.speed;
         this.myWidth = this.parent.GetComponent<SpriteRenderer>().bounds.extents.x;
-        this.speed = this.parent.speed;
         Flip(parent.lookingRight);
     }
 
@@ -27,7 +28,7 @@ public class EnemyWormPatrolState : IEnemyState
 
         // Platform ground edge check
         Vector2 LineCastPos = parent.transform.position - parent.transform.right * myWidth;
-        Debug.DrawLine(LineCastPos, LineCastPos + Vector2.down *3);
+        Debug.DrawLine(LineCastPos, LineCastPos + Vector2.down * 3);
         bool isgrounded = Physics2D.Linecast(LineCastPos, LineCastPos + Vector2.down * 2, parent.groundMask);
         if (!isgrounded) Flip();
 
@@ -36,7 +37,7 @@ public class EnemyWormPatrolState : IEnemyState
         Debug.DrawLine(WallLineCastPos, WallLineCastPos + Vector2.right * 0.2f);
         bool isWall = Physics2D.Linecast(LineCastPos, LineCastPos + Vector2.right * 0.2f, parent.groundMask);
         if (isWall) Flip();
-        
+
         // Player detection
         RaycastHit2D[] hitList = Physics2D.RaycastAll(parent.transform.position, parent.transform.right * -1, 12);
         Debug.DrawLine(parent.transform.position, parent.transform.position + parent.transform.right * -1 * 12);
@@ -51,9 +52,9 @@ public class EnemyWormPatrolState : IEnemyState
             }
         }
         if (foundPlayer)
-            parent.ChangeState(new EnemyWormChaseState());
-
+            parent.ChangeState(new EnemyLoaderChaseState());
     }
+
 
     void Flip()
     {

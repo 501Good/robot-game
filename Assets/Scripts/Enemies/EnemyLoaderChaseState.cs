@@ -2,24 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWormChaseState : IEnemyState
+public class EnemyLoaderChaseState : IEnemyState
 {
     private EnemyController parent;
-
     private GameObject player;
+    
+    private float speed;
+
     private float playerDetectCD;
     private float playerDetectTimer;
+
     private float myWidth;
-    private float speed;
 
     public void Enter(EnemyController parent)
     {
         this.parent = parent;
-        player = null;
+        this.speed = parent.speed * 2;
         playerDetectCD = 3f;
         playerDetectTimer = 3f;
         this.myWidth = this.parent.GetComponent<SpriteRenderer>().bounds.extents.x;
-        speed = parent.speed;
         if (parent.lookingRight)
         {
             speed = -speed;
@@ -35,9 +36,9 @@ public class EnemyWormChaseState : IEnemyState
     {
         playerDetectTimer -= Time.deltaTime;
         if (playerDetectTimer < 0)
-            parent.ChangeState(new EnemyWormPatrolState());
+            parent.ChangeState(new EnemyLoaderPatrolState());
 
-        // Player detection
+        // Player Detection
         RaycastHit2D[] hitList = Physics2D.RaycastAll(parent.transform.position, parent.transform.right * -1, 12);
         Debug.DrawLine(parent.transform.position, parent.transform.position + parent.transform.right * -1 * 12);
         bool foundPlayer = false;
@@ -51,9 +52,7 @@ public class EnemyWormChaseState : IEnemyState
             }
         }
         if (foundPlayer)
-        {
             playerDetectTimer = playerDetectCD;
-        }
 
         if (player != null)
         {
@@ -72,17 +71,16 @@ public class EnemyWormChaseState : IEnemyState
             else if (parent.lookingRight && player.transform.position.x - parent.transform.position.x < 0)
                 Flip();
 
-            if(isgrounded && !isWall)
+            if (isgrounded && !isWall)
             {
                 parent.transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
             }
 
-            if (Mathf.Abs(parent.transform.position.x - player.transform.position.x) < 6)
-                parent.ChangeState(new EnemyWormAttackState());
+            if (Mathf.Abs(parent.transform.position.x - player.transform.position.x) <= 1)
+                parent.ChangeState(new EnemyLoaderAttackState());
         }
-        
-    }
 
+    }
     void Flip()
     {
         if (this.parent.transform.localRotation.eulerAngles.y == 0)

@@ -72,6 +72,23 @@ public class PlayerController2D : MonoBehaviour
 
     private SpriteRenderer _spriteRenderer;
 
+    /////////////////////////////
+
+    private void Awake()
+    {
+        Events.OnRequestPlayerGameObject += RequestPlayerGameObject;
+    }
+
+    private void OnDisable()
+    {
+        Events.OnRequestPlayerGameObject -= RequestPlayerGameObject;
+    }
+
+    private PlayerController2D RequestPlayerGameObject()
+    {
+        return this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
