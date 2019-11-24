@@ -108,6 +108,7 @@ MonoBehaviour:
   CurveFollower: {fileID: 669316849}
   rocketPrefab: {fileID: 1788376967219486633, guid: c807286b391e3f9409ce2701495a30ac,
     type: 3}
+  bossHealthImage: {fileID: 0}
 --- !u!61 &9015749144572169618
 BoxCollider2D:
   m_ObjectHideFlags: 0
