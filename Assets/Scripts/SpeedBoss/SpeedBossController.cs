@@ -28,7 +28,10 @@ public class SpeedBossController : MonoBehaviour
     public RocketSpeedBoss rocketPrefab;
 
     public Image bossHealthImage;
+    private int _maxHealth;
     private int _health;
+
+    public bool bossAlive;
 
     private void Start()
     {
@@ -36,7 +39,9 @@ public class SpeedBossController : MonoBehaviour
         ChangeState(new SpeedBossIdleState());
         CurveFollower = GetComponent<FollowCurve>();
         _lastPosition = transform.position;
-        _health = 100;
+        _maxHealth = 60;
+        _health = _maxHealth;
+        bossAlive = true;
     }
 
     private void Update()
@@ -91,7 +96,22 @@ public class SpeedBossController : MonoBehaviour
     public void TakeDamage(int value)
     {
         _health -= value;
-        bossHealthImage.fillAmount = _health / 100f;
+        bossHealthImage.fillAmount = (float)_health / _maxHealth;
+        if (_health <= 0)
+        {
+            BossDeath();
+        }
+    }
+
+    private void BossDeath()
+    {
+        ChangeState(new SpeedBossIdleState());
+        transform.eulerAngles = new Vector3(0, 0, 90);
+        bossAlive = false;
     }
     
+    public void StartFight()
+    {
+        ChangeState(new SpeedBossActiveState());
+    }
 }

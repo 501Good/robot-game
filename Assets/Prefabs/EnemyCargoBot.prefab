@@ -175,6 +175,7 @@ MonoBehaviour:
     m_Bits: 256
   speed: 3
   lookingRight: 0
+  BatRockPrefab: {fileID: 0}
 --- !u!1 &7446845124251244328
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +187,7 @@ GameObject:
   - component: {fileID: 1068211735676761172}
   - component: {fileID: 689038657851977116}
   - component: {fileID: 5190910731079410900}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: PunchingTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

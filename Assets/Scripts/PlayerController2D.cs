@@ -73,15 +73,28 @@ public class PlayerController2D : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
 
     /////////////////////////////
+    private bool alive = true;
 
     private void Awake()
     {
         Events.OnRequestPlayerGameObject += RequestPlayerGameObject;
+        Events.OnPlayerDeath += playerDeath;
     }
 
     private void OnDisable()
     {
         Events.OnRequestPlayerGameObject -= RequestPlayerGameObject;
+        Events.OnPlayerDeath -= playerDeath;
+    }
+
+    private void playerDeath()
+    {
+        isWalking = false;
+        isGrounded = true;
+        UpdateAnimations();
+        rb.AddForce(Vector2.up, ForceMode2D.Impulse);
+        transform.eulerAngles = new Vector3(0, 0, 90);
+        this.enabled = false;
     }
 
     private PlayerController2D RequestPlayerGameObject()

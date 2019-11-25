@@ -38,8 +38,8 @@ public class EnemyWormChaseState : IEnemyState
             parent.ChangeState(new EnemyWormPatrolState());
 
         // Player detection
-        RaycastHit2D[] hitList = Physics2D.RaycastAll(parent.transform.position, parent.transform.right * -1, 12);
-        Debug.DrawLine(parent.transform.position, parent.transform.position + parent.transform.right * -1 * 12);
+        RaycastHit2D[] hitList = Physics2D.RaycastAll(parent.transform.position - new Vector3(0, 0.1f, 0), parent.transform.right * -1, 12);
+        Debug.DrawLine(parent.transform.position - new Vector3(0, 0.1f, 0), parent.transform.position + parent.transform.right * -1 * 12);
         bool foundPlayer = false;
         foreach (RaycastHit2D hit in hitList)
         {
@@ -58,12 +58,12 @@ public class EnemyWormChaseState : IEnemyState
         if (player != null)
         {
             // Platform ground edge check
-            Vector2 LineCastPos = parent.transform.position - parent.transform.right * myWidth;
+            Vector2 LineCastPos = parent.transform.position - parent.transform.right * myWidth - new Vector3(0, 0.1f, 0);
             Debug.DrawLine(LineCastPos, LineCastPos + Vector2.down * 3);
             bool isgrounded = Physics2D.Linecast(LineCastPos, LineCastPos + Vector2.down * 2, parent.groundMask);
 
             // Running into wall check
-            Vector2 WallLineCastPos = parent.transform.position - parent.transform.right * myWidth;
+            Vector2 WallLineCastPos = parent.transform.position - parent.transform.right * myWidth - new Vector3(0, 0.1f, 0);
             Debug.DrawLine(WallLineCastPos, WallLineCastPos + Vector2.right * 0.2f);
             bool isWall = Physics2D.Linecast(LineCastPos, LineCastPos + Vector2.right * 0.2f, parent.groundMask);
 

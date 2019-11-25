@@ -18,8 +18,8 @@ class SpeedBossIdleState : ISpeedBossState
 
     public void Update()
     {
-        if (Input.GetKey(KeyCode.K))
-            parent.ChangeState(new SpeedBossActiveState());
+        Vector3 destination = parent.MiddleConstraint.position;
+        parent.transform.position = Vector3.MoveTowards(parent.transform.position, destination, 4f * Time.deltaTime);
     }
 
 }

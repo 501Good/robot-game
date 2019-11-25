@@ -10,17 +10,21 @@ public class EnemyWormAttackState : IEnemyState
     private bool attacked;
     private float timer;
 
+    private GameObject AttackTrigger;
+
     public void Enter(EnemyController parent)
     {
         this.parent = parent;
         rb = parent.GetComponent<Rigidbody2D>();
         attacked = false;
         timer = 0.5f;
+        AttackTrigger = parent.transform.GetChild(0).gameObject;
+        AttackTrigger.SetActive(true);
     }
 
     public void Exit()
     {
-        
+        AttackTrigger.SetActive(false);
     }
 
     public void Update()

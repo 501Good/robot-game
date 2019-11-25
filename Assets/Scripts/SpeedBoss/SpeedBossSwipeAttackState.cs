@@ -14,11 +14,12 @@ class SpeedBossSwipeAttackState : ISpeedBossState
     public void Enter(SpeedBossController parent)
     {
         this.parent = parent;
+        parent.transform.GetChild(0).gameObject.SetActive(true);
     }
 
     public void Exit()
     {
-
+        parent.transform.GetChild(0).gameObject.SetActive(false);
     }
 
     public void Update()

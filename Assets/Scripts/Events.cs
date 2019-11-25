@@ -13,6 +13,13 @@ public static class Events
     
     public static event Action<Cinemachine.CinemachineVirtualCamera> OnChangeToCamera;
     public static void ChangeToCamera(Cinemachine.CinemachineVirtualCamera value) => OnChangeToCamera?.Invoke(value);
-    
 
+    public static event Action OnPlayerDeath;
+    public static void PlayerDeath() => OnPlayerDeath?.Invoke();
+
+    public static event Action<bool> OnChangeAllowTransformation;
+    public static void ChangeAllowTransformation(bool value) => OnChangeAllowTransformation?.Invoke(value);
+
+    public static event Func<bool> OnRequestAllowTransformation;
+    public static bool RequestAllowTransformation() => OnRequestAllowTransformation?.Invoke() ?? false;
 }

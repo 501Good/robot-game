@@ -14,7 +14,6 @@ public class RocketSpeedBoss : MonoBehaviour
     {
         if (!collision.CompareTag("Enemy") && !collision.CompareTag("RoomTrigger"))
         {
-            Debug.Log(collision.transform.name);
             Destroy(this.gameObject);
             
         }

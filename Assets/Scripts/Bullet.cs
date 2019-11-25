@@ -50,8 +50,6 @@ public class Bullet : MonoBehaviour
 
             this.gameObject.GetComponent<Animator>().SetTrigger("BlowUp");
         }
-        Debug.Log(collision.tag);
-        //var hp = collision.GetComponent<Health>();
 
         
         if (!collision.CompareTag("Player"))
