@@ -14,15 +14,24 @@ public class GameManager : MonoBehaviour
     public GameObject cameras;
     private bool playerAlive = true;
      
+    public Checkpoint[] Checkpoints;
+    public Checkpoint LastActiveCheckpoint;
+
+    public PlayerController2D CurrentCharacter;
 
     private void Awake()
     {
         Events.OnPlayerChangeHealth += PlayerChangeHealth;
         Events.OnPlayerRequestHealth += PlayerRequestHealth;
         Events.OnChangeToCamera += ChangeToCamera;
+
         Events.OnChangeAllowTransformation += ChangeAllowTransformation;
         Events.OnRequestAllowTransformation += RequestAllowTransformation;
         Events.OnPlayerDeath += playerDeath;
+
+        Events.OnSetCurrentCharacter += SetCurrentCharacter;
+        Events.OnSetLastActiveCheckpoint += SetLastActiveCheckpoint;
+        Events.OnRespawnPlayer += RespawnPlayer;
     }
 
     private void OnDestroy()
@@ -30,9 +39,15 @@ public class GameManager : MonoBehaviour
         Events.OnPlayerChangeHealth -= PlayerChangeHealth;
         Events.OnPlayerRequestHealth -= PlayerRequestHealth;
         Events.OnChangeToCamera -= ChangeToCamera;
+
         Events.OnChangeAllowTransformation -= ChangeAllowTransformation;
         Events.OnRequestAllowTransformation -= RequestAllowTransformation;
         Events.OnPlayerDeath -= playerDeath;
+
+        Events.OnSetCurrentCharacter -= SetCurrentCharacter;
+        Events.OnSetLastActiveCheckpoint -= SetLastActiveCheckpoint;
+        Events.OnRespawnPlayer -= RespawnPlayer;
+
     }
     
     private void PlayerChangeHealth(int value)
@@ -53,6 +68,22 @@ public class GameManager : MonoBehaviour
     private int PlayerRequestHealth()
     {
         return _playerHealth;
+    }
+
+    private void RespawnPlayer()
+    {
+        CurrentCharacter.transform.position = LastActiveCheckpoint.transform.position;
+        PlayerChangeHealth(100);
+    }
+
+    private void SetCurrentCharacter(PlayerController2D character)
+    {
+        CurrentCharacter = character;
+    }
+
+    private void SetLastActiveCheckpoint(Checkpoint checkpoint)
+    {
+        LastActiveCheckpoint = checkpoint;
     }
 
     private void ChangeToCamera(Cinemachine.CinemachineVirtualCamera targetCam)

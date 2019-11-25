@@ -40,6 +40,7 @@ public class CharacterAbilities : MonoBehaviour
         char2.gameObject.SetActive(true);
         PlayerCamera.Follow = char2.gameObject.transform;
         PlayerCamera.LookAt = char2.gameObject.transform;
+        Events.SetCurrentCharacter(char2);
     }
 
     private IEnumerator ChangeTypeAfterDelay(float seconds)

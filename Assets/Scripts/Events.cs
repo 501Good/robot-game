@@ -2,6 +2,15 @@
 
 public static class Events
 {
+    public static event Action<PlayerController2D> OnSetCurrentCharacter;
+    public static void SetCurrentCharacter(PlayerController2D character) => OnSetCurrentCharacter?.Invoke(character);
+
+    public static event Action<Checkpoint> OnSetLastActiveCheckpoint;
+    public static void SetLastActiveCheckpoint(Checkpoint checkpoint) => OnSetLastActiveCheckpoint?.Invoke(checkpoint);
+
+    public static event Action OnRespawnPlayer;
+    public static void RespawnPlayer() => OnRespawnPlayer?.Invoke();
+
     public static event Action<int> OnPlayerChangeHealth;
     public static void PlayerChangeHealth(int value) => OnPlayerChangeHealth?.Invoke(value);
 
