@@ -62,4 +62,12 @@ public class BossStartTrigger : MonoBehaviour
         BossHealthBar.SetActive(false);
         ToggleButton.SetActive(true);
     }
+
+
+
+
+
+    private void resetFight(){
+
+    }
 }

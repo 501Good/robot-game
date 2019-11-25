@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public Checkpoint LastActiveCheckpoint;
 
     public PlayerController2D CurrentCharacter;
+    public Cinemachine.CinemachineVirtualCamera publicCamera;
 
     private void Awake()
     {
@@ -74,6 +75,13 @@ public class GameManager : MonoBehaviour
     {
         CurrentCharacter.transform.position = LastActiveCheckpoint.transform.position;
         PlayerChangeHealth(100);
+
+        foreach (Cinemachine.CinemachineVirtualCamera cam in cameras.transform.GetComponentsInChildren<Cinemachine.CinemachineVirtualCamera>())
+        {
+            cam.gameObject.SetActive(false);
+        }
+        publicCamera.gameObject.SetActive(true);
+
     }
 
     private void SetCurrentCharacter(PlayerController2D character)
