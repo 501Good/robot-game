@@ -21,17 +21,17 @@ public class SpeedBossRocketLeapAttackState : ISpeedBossState
 
     }
 
-    private int rocketSpawnMaxCD = 4;
-    private float rocketTimer = 0;
+    private int rocketSpawnMaxCD = 20;
+    private float rocketTimer = 0f;
     
 
     public void Update()
     {
         if (rocketTimer <= 0)
         {
-            GameObject.Instantiate(parent.rocketPrefab, parent.transform.position, Quaternion.identity);
+            GameObject.Instantiate(parent.rocketPrefab, parent.transform.position + new Vector3(0,-0.5f,0), Quaternion.identity);
             System.Random rand = new System.Random();
-            rocketTimer = rand.Next(1, rocketSpawnMaxCD) / 10f;
+            rocketTimer = 0.1f;//rand.Next(1, rocketSpawnMaxCD) / 100f;
         }
         else
             rocketTimer -= Time.deltaTime;

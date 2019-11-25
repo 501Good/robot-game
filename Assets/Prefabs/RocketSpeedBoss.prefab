@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3597503687876493768}
   m_Layer: 0
   m_Name: RocketSpeedBoss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7957063529212398687}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.004649, y: 3.004649, z: 3.004649}
+  m_LocalScale: {x: 1.6741904, y: 1.6741904, z: 1.6741904}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,11 +72,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1013366739975189944, guid: dc812a5606975d44ba9e55d4f2f4867d,
+  m_Sprite: {fileID: 3987827261951581834, guid: 8eb68dd7f6b575e448e30be7d42f4a87,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.24056602, b: 0.24056602, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 0.25, y: 0.25}
   m_AdaptiveModeThreshold: 0.5
@@ -109,9 +109,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.18}
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.31
 --- !u!50 &3597503687876493768
 Rigidbody2D:
   serializedVersion: 4

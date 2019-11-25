@@ -8,6 +8,7 @@ public class CameraChangeTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Events.ChangeToCamera(cam);
+        if(collision.CompareTag("Player"))
+            Events.ChangeToCamera(cam); 
     }
 }

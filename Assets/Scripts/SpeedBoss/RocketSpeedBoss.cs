@@ -5,7 +5,6 @@ using UnityEngine;
 public class RocketSpeedBoss : MonoBehaviour
 {
 
-
     private void Update()
     {
         this.transform.position = Vector2.MoveTowards(this.transform.position, this.transform.position + Vector3.down, 15f * Time.deltaTime);
@@ -13,9 +12,11 @@ public class RocketSpeedBoss : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Enemy"))
+        if (!collision.CompareTag("Enemy") && !collision.CompareTag("RoomTrigger"))
         {
+            Debug.Log(collision.transform.name);
             Destroy(this.gameObject);
+            
         }
         if (collision.CompareTag("Player"))
         {
