@@ -5,54 +5,70 @@ using UnityEngine.UI;
 
 public class CharacterAbilities : MonoBehaviour
 {
-    public bool TypeOneAvailable = false;
-    public bool TypeTwoAvailable = false;
-    public bool TypeThreeAvailable = false;
+    public PlayerController2D BaseCharacterPrefab;
+    public PlayerController2D AdditionalCharacterPrefab;
 
-    public Button TypeOneButton;
-    public Button TypeTwoButton;
+    public Cinemachine.CinemachineVirtualCamera PlayerCamera;
 
-    public PlayerController2D PlayerPrefab;
+    public bool AllowTransformation;
 
-    private void Awake()
+    private Animator anim;
+    private bool isGrounded;
+
+    private void Start()
     {
+        anim = GetComponent<Animator>();
     }
 
-    public void SetType(int type)
+    public void ChangeType()
     {
-        if (type > 0 && type <= 3)
+        if (AdditionalCharacterPrefab.gameObject.activeSelf)
         {
-            if (type == 1)
-            {
-                TypeOneAvailable = true;
-            }
-            else if (type == 2)
-            {
-                TypeTwoAvailable = true;
-                TypeOneButton.gameObject.SetActive(true);
-                TypeTwoButton.gameObject.SetActive(true);
-            }
-            else
-            {
-                TypeThreeAvailable = true;
-            }
+            SwapCharacters(AdditionalCharacterPrefab, BaseCharacterPrefab);
+        } 
+        else
+        {
+            SwapCharacters(BaseCharacterPrefab, AdditionalCharacterPrefab);
         }
     }
 
-    public void ChangeType(int type)
+    private void SwapCharacters(PlayerController2D char1, PlayerController2D char2)
     {
-        if (type == 1)
+        var currentPos = gameObject.transform.position;
+        char2.gameObject.transform.position = currentPos;
+        char1.gameObject.SetActive(false);
+        char2.gameObject.SetActive(true);
+        PlayerCamera.Follow = char2.gameObject.transform;
+        PlayerCamera.LookAt = char2.gameObject.transform;
+    }
+
+    private IEnumerator ChangeTypeAfterDelay(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        ChangeType();
+    }
+
+    private PlayerController2D GetActivePlayer()
+    {
+        if (AdditionalCharacterPrefab.gameObject.activeSelf)
         {
-            Debug.Log("1");
-            PlayerPrefab.jumpForce = 35.0f;
-            PlayerPrefab.amountOfJumps = 1;
-            PlayerPrefab.SetColor(new Color(255f / 255.0f, 255f / 255.0f, 255f / 255.0f, 1f));
-        } else if (type == 2)
+            return AdditionalCharacterPrefab;
+        }
+        else
         {
-            Debug.Log("2");
-            PlayerPrefab.jumpForce = 40.0f;
-            PlayerPrefab.amountOfJumps = 2;
-            PlayerPrefab.SetColor(new Color(233f / 255.0f, 91f / 255.0f, 91f / 255.0f, 1f));
+            return BaseCharacterPrefab;
+        }
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F) && AllowTransformation)
+        {
+            if (GetActivePlayer().GetGrounded())
+            {
+                anim.SetTrigger("Transforming");
+                StartCoroutine(ChangeTypeAfterDelay(0.5f));
+            }
         }
     }
 }

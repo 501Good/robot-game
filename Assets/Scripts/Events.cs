@@ -7,8 +7,12 @@ public static class Events
 
     public static event Func<int> OnPlayerRequestHealth;
     public static int PlayerRequestHealth() => OnPlayerRequestHealth?.Invoke() ?? 0;
-
+    
     public static event Func<PlayerController2D> OnRequestPlayerGameObject;
     public static PlayerController2D RequestPlayerGameObject() => OnRequestPlayerGameObject?.Invoke() ?? null;
     
+    public static event Action<Cinemachine.CinemachineVirtualCamera> OnChangeToCamera;
+    public static void ChangeToCamera(Cinemachine.CinemachineVirtualCamera value) => OnChangeToCamera?.Invoke(value);
+    
+
 }

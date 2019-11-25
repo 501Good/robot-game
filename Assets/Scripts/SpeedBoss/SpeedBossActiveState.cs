@@ -100,7 +100,7 @@ class SpeedBossActiveState : ISpeedBossState
                         }
                         else
                         {
-                            this.parent.transform.position = Vector2.MoveTowards(this.parent.transform.position, this.parent.PlatformLeftLeapConstraint.position, 4f * Time.deltaTime);
+                            this.parent.transform.position = Vector2.MoveTowards(this.parent.transform.position, this.parent.PlatformLeftLeapConstraint.position, 8f * Time.deltaTime);
                         }
                         
                     }
@@ -116,7 +116,7 @@ class SpeedBossActiveState : ISpeedBossState
                         }
                         else
                         {
-                            this.parent.transform.position = Vector2.MoveTowards(this.parent.transform.position, this.parent.PlatformRightLeapConstraint.position, 4f * Time.deltaTime);
+                            this.parent.transform.position = Vector2.MoveTowards(this.parent.transform.position, this.parent.PlatformRightLeapConstraint.position, 8f * Time.deltaTime);
                         }
                     }
 
@@ -142,7 +142,7 @@ class SpeedBossActiveState : ISpeedBossState
                 }
                 else
                 {
-                    this.parent.transform.position = Vector2.MoveTowards(this.parent.transform.position, Target.position, 4f * Time.deltaTime);
+                    this.parent.transform.position = Vector2.MoveTowards(this.parent.transform.position, Target.position, 8f * Time.deltaTime);
                 }
             }
         }

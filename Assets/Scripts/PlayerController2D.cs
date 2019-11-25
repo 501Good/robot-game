@@ -372,6 +372,11 @@ public class PlayerController2D : MonoBehaviour
         return facingDirection;
     }
 
+    public bool GetGrounded()
+    {
+        return isGrounded;
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
