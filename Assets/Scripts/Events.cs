@@ -8,6 +8,8 @@ public static class Events
     public static event Func<int> OnPlayerRequestHealth;
     public static int PlayerRequestHealth() => OnPlayerRequestHealth?.Invoke() ?? 0;
 
+    public static event Action<Cinemachine.CinemachineVirtualCamera> OnChangeToCamera;
+    public static void ChangeToCamera(Cinemachine.CinemachineVirtualCamera value) => OnChangeToCamera?.Invoke(value);
     /*
     public static event Action OnTowerSelected;
     public static void TowerSelected() => OnTowerSelected?.Invoke();

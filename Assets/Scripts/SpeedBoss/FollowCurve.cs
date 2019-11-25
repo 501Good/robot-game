@@ -65,14 +65,14 @@ public class FollowCurve : MonoBehaviour
                 _chosenXCurve =leapXCurve;
                 _chosenYCurve = leapYCurve;
                 _xMultiplier = 3;
-                _yMultiplier = 6;
+                _yMultiplier = 7;
                 _timeMultiplier = 2;
                 break;
             case Headings.jumpDown: // Jumping down
                 _chosenXCurve = leapXCurve;
                 _chosenYCurve = leapDownYCurve;
                 _xMultiplier = 3;
-                _yMultiplier = 6;
+                _yMultiplier = 7;
                 _timeMultiplier = 2;
                 break;
             case Headings.leapOver: // Leaping over
