@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public Checkpoint[] Checkpoints;
     public Checkpoint LastActiveCheckpoint;
 
+    public GameObject respawnPanel;
+
     public PlayerController2D CurrentCharacter;
     public Cinemachine.CinemachineVirtualCamera publicCamera;
 
@@ -64,6 +66,7 @@ public class GameManager : MonoBehaviour
     private void playerDeath()
     {
         playerAlive = false;
+        respawnPanel.SetActive(true);
     }
     
     private int PlayerRequestHealth()
@@ -75,12 +78,14 @@ public class GameManager : MonoBehaviour
     {
         CurrentCharacter.transform.position = LastActiveCheckpoint.transform.position;
         PlayerChangeHealth(100);
+        playerAlive = true;
 
         foreach (Cinemachine.CinemachineVirtualCamera cam in cameras.transform.GetComponentsInChildren<Cinemachine.CinemachineVirtualCamera>())
         {
             cam.gameObject.SetActive(false);
         }
         publicCamera.gameObject.SetActive(true);
+        respawnPanel.SetActive(false);
 
     }
 
