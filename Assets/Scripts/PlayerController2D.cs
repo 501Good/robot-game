@@ -82,7 +82,7 @@ public class PlayerController2D : MonoBehaviour
         Events.OnPlayerDeath += playerDeath;
     }
 
-    private void OnDisable()
+    private void onDestroy()
     {
         Events.OnRequestPlayerGameObject -= RequestPlayerGameObject;
         Events.OnPlayerDeath -= playerDeath;

@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class RespawnPlayerButton : MonoBehaviour
+public class MainMenuButton : MonoBehaviour
 {
     public Button button;
 
     private void Awake()
     {
-        button.onClick.AddListener(respawnPlayer);
+        button.onClick.AddListener(ClickedButton);
     }
 
-    private void respawnPlayer()
+    private void ClickedButton()
     {
         Time.timeScale = 1;
-        Events.RespawnPlayer();
+        SceneManager.LoadScene(0);
     }
 }

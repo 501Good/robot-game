@@ -28,6 +28,7 @@ public class BossStartTrigger : MonoBehaviour
         {
             BossDeath();
             deathFinished = true;
+            ToggleButton.SetActive(true);
         }
     }
 

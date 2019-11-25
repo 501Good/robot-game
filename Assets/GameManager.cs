@@ -117,4 +117,20 @@ public class GameManager : MonoBehaviour
     {
         return playerAllowedTransformation;
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            respawnPanel.SetActive(!respawnPanel.activeSelf);
+            if (respawnPanel.activeSelf)
+            {
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
+        }
+    }
 }
