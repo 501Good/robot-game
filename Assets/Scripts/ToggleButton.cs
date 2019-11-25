@@ -5,7 +5,7 @@ using TMPro;
 
 public class ToggleButton : MonoBehaviour
 {
-    public GameObject Togglable;
+    public GameObject[] Togglables;
 
     private TextMeshPro tip;
 
@@ -39,7 +39,10 @@ public class ToggleButton : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && canToggle)
         {
-            Togglable.SetActive(!Togglable.activeSelf);
+            foreach (GameObject togglable in Togglables)
+            {
+                togglable.SetActive(!togglable.activeSelf);
+            }
             this.gameObject.SetActive(false);
         }
     }

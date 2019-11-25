@@ -71,6 +71,7 @@ public class PlayerController2D : MonoBehaviour
     public LayerMask whatIsGround;
 
     private SpriteRenderer _spriteRenderer;
+    private PlayerAudio playerAudio;
 
     /////////////////////////////
     private bool alive = true;
@@ -89,6 +90,7 @@ public class PlayerController2D : MonoBehaviour
 
     private void playerDeath()
     {
+        playerAudio.PlayDeath();
         isWalking = false;
         isGrounded = true;
         UpdateAnimations();
@@ -110,6 +112,7 @@ public class PlayerController2D : MonoBehaviour
         amountOfJumpsLeft = amountOfJumps;
         wallJumpDirection.Normalize();
         _spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
+        playerAudio = GetComponent<PlayerAudio>();
     }
 
     // Update is called once per frame

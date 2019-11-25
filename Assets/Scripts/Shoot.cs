@@ -8,6 +8,7 @@ public class Shoot : MonoBehaviour
 
     private PlayerController2D playerController;
     private SpriteRenderer playerSpriteRenderer;
+    private PlayerAudio playerAudio;
     
     public float ShootingCD = 0.75f;
     private float _shootingTimer = 0.75f;
@@ -17,6 +18,7 @@ public class Shoot : MonoBehaviour
     {
         playerController = GetComponent<PlayerController2D>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
+        playerAudio = GetComponent<PlayerAudio>();
     }
 
     // Update is called once per frame
@@ -27,6 +29,7 @@ public class Shoot : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && _shootingTimer <= 0f)
         {
             Debug.Log("Shooting");
+            playerAudio.PlayShot();
             ShootBullet();
         }
     }
