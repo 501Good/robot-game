@@ -6,7 +6,7 @@ public class KillPlayerCollider : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.tag == "Player")
         {
             Events.PlayerChangeHealth(0);
         }
