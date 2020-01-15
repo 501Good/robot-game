@@ -63,7 +63,7 @@ public class CharacterAbilities : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && Events.RequestAllowTransformation() /*AllowTransformation*/)
+        if (Input.GetKeyDown(KeyCode.F))// && Events.RequestAllowTransformation() /*AllowTransformation*/)
         {
             if (GetActivePlayer().GetGrounded())
             {
