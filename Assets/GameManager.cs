@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public PlayerController2D CurrentCharacter;
     public Cinemachine.CinemachineVirtualCamera publicCamera;
 
+    public static bool IsInputEnabled = true;
+
     private void Awake()
     {
         Events.OnPlayerChangeHealth += PlayerChangeHealth;

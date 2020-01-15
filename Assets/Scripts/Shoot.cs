@@ -26,7 +26,7 @@ public class Shoot : MonoBehaviour
     {
         _shootingTimer -= Time.deltaTime;
 
-        if (Input.GetButtonDown("Fire1") && _shootingTimer <= 0f)
+        if (Input.GetButtonDown("Fire1") && _shootingTimer <= 0f && GameManager.IsInputEnabled)
         {
             Debug.Log("Shooting");
             playerAudio.PlayShot();
