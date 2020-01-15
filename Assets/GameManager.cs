@@ -52,7 +52,6 @@ public class GameManager : MonoBehaviour
         Events.OnSetCurrentCharacter -= SetCurrentCharacter;
         Events.OnSetLastActiveCheckpoint -= SetLastActiveCheckpoint;
         Events.OnRespawnPlayer -= RespawnPlayer;
-
     }
     
     private void PlayerChangeHealth(int value)

@@ -62,6 +62,8 @@ public class AttackLimb : MonoBehaviour
         {
             _timer += Time.deltaTime;
         }
+
+        Debug.DrawRay(LimbSolver.transform.position, Target.transform.position);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
