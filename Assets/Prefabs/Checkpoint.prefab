@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7459658635350200431}
   - component: {fileID: 7459658635350200430}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ GameObject:
   - component: {fileID: 7459658636280270629}
   - component: {fileID: 7459658636280270628}
   - component: {fileID: 7459658636280270631}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}

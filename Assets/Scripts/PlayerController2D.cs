@@ -112,7 +112,7 @@ public class PlayerController2D : MonoBehaviour
         amountOfJumpsLeft = amountOfJumps;
         wallJumpDirection.Normalize();
         _spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
-        playerAudio = GetComponent<PlayerAudio>();
+        playerAudio = GetComponentInChildren<PlayerAudio>();
     }
 
     // Update is called once per frame
@@ -398,5 +398,11 @@ public class PlayerController2D : MonoBehaviour
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
 
         Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y, wallCheck.position.z));
+    }
+
+    public void Respawned()
+    {
+        isFacingRight = true;
+        facingDirection = 1;
     }
 }

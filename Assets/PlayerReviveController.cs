@@ -14,9 +14,10 @@ public class PlayerReviveController : MonoBehaviour
         Events.OnRespawnPlayer -= RespawnPlayer;
     }
 
-    private void RespawnPlayer()
+    public void RespawnPlayer()
     {
         transform.eulerAngles = new Vector3(0, 0, 0);
         this.gameObject.GetComponent<PlayerController2D>().enabled = true;
+        this.gameObject.GetComponent<PlayerController2D>().Respawned();
     }
 }

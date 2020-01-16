@@ -40,6 +40,9 @@ public class CharacterAbilities : MonoBehaviour
         char2.gameObject.SetActive(true);
         PlayerCamera.Follow = char2.gameObject.transform;
         PlayerCamera.LookAt = char2.gameObject.transform;
+        
+        if (char2.GetComponent<PlayerController2D>().enabled == false)
+            char2.GetComponent<PlayerReviveController>().RespawnPlayer();
         Events.SetCurrentCharacter(char2);
     }
 
@@ -65,7 +68,7 @@ public class CharacterAbilities : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))// && Events.RequestAllowTransformation() /*AllowTransformation*/)
         {
-            if (GetActivePlayer().GetGrounded())
+            if (GetActivePlayer().GetGrounded() && Events.PlayerRequestHealth() > 0)
             {
                 anim.SetTrigger("Transforming");
                 StartCoroutine(ChangeTypeAfterDelay(0.5f));

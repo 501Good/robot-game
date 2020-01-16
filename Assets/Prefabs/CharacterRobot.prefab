@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1719455985}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1889245673}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2975661738513908151}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 2322644973833560191}
   - component: {fileID: 1008952677624580819}
   - component: {fileID: 7656037680806560243}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9083102195179654469}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftLegTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1997589280615165646}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightArmSolver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2057920775650209357}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9193989001952700445}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftArmTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5044139322171482905}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bone_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 8312641014063353963}
   - component: {fileID: 1904974778670457536}
   - component: {fileID: 4421735823342514985}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -463,7 +463,10 @@ GameObject:
   - component: {fileID: 1926103753510245394}
   - component: {fileID: 1926103753510245391}
   - component: {fileID: 1926103753510245396}
-  m_Layer: 0
+  - component: {fileID: 8951030298294104793}
+  - component: {fileID: 5831033211206851782}
+  - component: {fileID: 6417947677192292678}
+  m_Layer: 9
   m_Name: CharacterRobot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -628,6 +631,130 @@ MonoBehaviour:
   AdditionalCharacterPrefab: {fileID: 1926103753510245391}
   PlayerCamera: {fileID: 0}
   AllowTransformation: 1
+--- !u!114 &8951030298294104793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923188234543276367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c68cdb0cdccdb44ad6890f8f61053b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5831033211206851782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923188234543276367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f18d058fd25d3468fa1312152f8471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerAudioSource: {fileID: 6417947677192292678}
+  Footstep: {fileID: 8300000, guid: ebfc9c801466f174ead5cd3d504980cf, type: 3}
+  Shot: {fileID: 8300000, guid: 9e83a3b612eaa264f9867b026a30ede9, type: 3}
+  Death: {fileID: 8300000, guid: 275dfb9f15d492c4e9b91264adb97dfe, type: 3}
+--- !u!82 &6417947677192292678
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923188234543276367}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2005882141255852849
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +764,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7383145596287197589}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bone_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -670,7 +797,7 @@ GameObject:
   - component: {fileID: 5731001012539260961}
   - component: {fileID: 8451764461409673423}
   - component: {fileID: 5012949626355886839}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -772,7 +899,7 @@ GameObject:
   - component: {fileID: 7193834339819727177}
   - component: {fileID: 1010877932059747615}
   - component: {fileID: 3694357638374631612}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -872,7 +999,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6361093901676451699}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bone_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -903,7 +1030,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5010723722682232735}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bone_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -934,7 +1061,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5746424953810650334}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bone_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -966,7 +1093,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5317242536303293315}
   - component: {fileID: 322556525161151997}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftArmSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1029,7 +1156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6490748589561892596}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bone_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1062,7 +1189,7 @@ GameObject:
   - component: {fileID: 6421173807513283340}
   - component: {fileID: 6671791624799185991}
   - component: {fileID: 1273588822824919155}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1161,7 +1288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 464166950026309672}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bone_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1192,7 +1319,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6254267123993819328}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bone_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1225,7 +1352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1922272525763319568}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftArmSolver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1256,7 +1383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9015705865076287860}
   - component: {fileID: 4585714606798658865}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightArmSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1320,7 +1447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5217519190253138181}
   - component: {fileID: 7027646568289735192}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightLegSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1384,7 +1511,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2421653776182863869}
   - component: {fileID: 5691099694877292295}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftLegSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1447,7 +1574,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5417279119228188167}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightLegSolver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1477,7 +1604,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6178697324844701900}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bone_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1508,7 +1635,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8473514291735120693}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightLegTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1538,7 +1665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4983945043344731354}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightArmTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1570,7 +1697,7 @@ GameObject:
   - component: {fileID: 8725969659625617752}
   - component: {fileID: 2643713319854470181}
   - component: {fileID: 7378130689124544833}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1670,7 +1797,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4176467644045065337}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bone_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1701,7 +1828,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7048503390064346575}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftLegSolver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
