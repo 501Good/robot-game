@@ -21,12 +21,13 @@ public class SceneChanger : MonoBehaviour
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(newSceneName));
         
         postLoad();
-        Debug.Log("New scene: " + newSceneName);
+
         if (!string.IsNullOrEmpty(newSceneName))
         {
-            
+            Debug.Log(newSceneName);
             yield return new WaitForEndOfFrame();
-            SceneManager.UnloadSceneAsync(oldSceneName);
+            AsyncOperation unloading = SceneManager.UnloadSceneAsync(oldSceneName);
+            yield return unloading;
         }
     }
 

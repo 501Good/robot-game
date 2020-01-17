@@ -28,7 +28,6 @@ public class Shoot : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && _shootingTimer <= 0f && GameManager.IsInputEnabled)
         {
-            Debug.Log("Shooting");
             playerAudio.PlayShot();
             ShootBullet();
         }
@@ -39,7 +38,6 @@ public class Shoot : MonoBehaviour
         Bullet bullet = GameObject.Instantiate<Bullet>(BulletPrefab, null);
         bullet.transform.position = this.transform.position + new Vector3(0,1,0);
         bullet.SetForwardDir(playerController.GetFacingDirection());
-
         _shootingTimer = ShootingCD;
     }
 }

@@ -63,7 +63,7 @@ public class EnemyController : MonoBehaviour
 
     private void Death()
     {
-        gameState.GetCurrentLevelData().SetEnemyIsDeadState(this.gameObject, true);
+        //gameState.GetCurrentLevelData().SetEnemyIsDeadState(this.gameObject, true);
         Destroy(this.gameObject);
     }
 }

@@ -12,8 +12,10 @@ public class LaserBoss : MonoBehaviour
 
     public float pingpongMove;
 
-
     private bool _isAlive = true;
+
+    public LaserBossAudio bossAudio;
+    public Cinemachine.CinemachineVirtualCamera playerCamera;
     
     void Update()
     {
@@ -25,6 +27,13 @@ public class LaserBoss : MonoBehaviour
             {
                 laserOn = !laserOn;
                 _Timer = 0;
+                if (laserOn)
+                {
+                    bossAudio.PlayLaser();
+                } else
+                {
+                    bossAudio.Stop();
+                }
             }
             laser1.SetActive(laserOn);
             laser2.SetActive(laserOn);
@@ -40,5 +49,7 @@ public class LaserBoss : MonoBehaviour
         Color changeColor = GetComponent<SpriteRenderer>().color;
         changeColor.a = 0.6f;
         GetComponent<SpriteRenderer>().color = changeColor;
+        bossAudio.PlayDeath();
+        Events.ChangeToCamera(playerCamera);
     }
 }

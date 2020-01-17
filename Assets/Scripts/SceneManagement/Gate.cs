@@ -9,6 +9,8 @@ public class Gate : MonoBehaviour
     public string otherGate = "";
     public string otherScene = "";
 
+    public GameObject player;
+
     public bool isOccupied;
 
     public void Awake()
@@ -32,7 +34,12 @@ public class Gate : MonoBehaviour
             Gate newGate = GameObject.Find(otherGate).GetComponent<Gate>();
             Debug.Log("New gate: " + newGate);
             newGate.SetOccupied();
-            other.transform.position = newGate.transform.position;
+            Debug.Log("Player position: " + other.transform.position);
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            other.transform.position = new Vector3(35f, 0f, 0f);
+            Debug.Log("New gate position: " + newGate.transform.position);
+            Debug.Log("Collision: " + player.gameObject);
+            Debug.Log("Player position: " + player.transform.position);
             Debug.Log("Postload finished");
         };
         
