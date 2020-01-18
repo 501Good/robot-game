@@ -20,7 +20,9 @@ public class Laser : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Events.PlayerChangeHealth(0);//TODO maybe too much dmg lol
+            Events.PlayerChangeHealth(Events.PlayerRequestHealth() - 20);
+            Vector2 currentVelocity = collision.GetComponent<Rigidbody2D>().velocity;
+            collision.GetComponent<Rigidbody2D>().velocity = new Vector2(currentVelocity.x, currentVelocity.y + 15);
         }
     }
 }

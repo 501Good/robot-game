@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Health : MonoBehaviour
 {
     [SerializeField]
     private int health = 20;
 
     public TextMeshProUGUI text;
+ 
+    private Rigidbody2D rb;
 
     private void Start()
     {
@@ -16,6 +19,8 @@ public class Health : MonoBehaviour
         {
             text.text = "HP : " + health;
         }
+
+        rb = GetComponent<Rigidbody2D>();
     }
 
     public void TakeDamage(int dam)

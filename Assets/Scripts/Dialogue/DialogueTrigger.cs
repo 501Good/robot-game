@@ -18,6 +18,7 @@ public class DialogueTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             _npc.TriggerDialogue();
+            this.gameObject.SetActive(false);
         }
     }
 }

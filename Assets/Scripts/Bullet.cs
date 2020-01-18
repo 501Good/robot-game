@@ -54,7 +54,7 @@ public class Bullet : MonoBehaviour
         
         if (!collision.CompareTag("Player"))
         {
-            collision.SendMessage("TakeDamage", 10);
+            collision.SendMessage("TakeDamage", 10, SendMessageOptions.DontRequireReceiver);
             this.speed = 0;
             this.gameObject.GetComponent<Animator>().SetTrigger("BlowUp");
         }

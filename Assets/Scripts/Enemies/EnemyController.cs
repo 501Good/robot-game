@@ -20,12 +20,8 @@ public class EnemyController : MonoBehaviour
     public bool lookingRight = false;
     public GameObject BatRockPrefab;
 
-    private GameState gameState;
-
     private void Awake()
     {
-        gameState = GameObject.FindObjectOfType<GameState>();
-
         switch (CurrentEnemyType)
         {
             case enemyType.Worm:
@@ -63,7 +59,6 @@ public class EnemyController : MonoBehaviour
 
     private void Death()
     {
-        //gameState.GetCurrentLevelData().SetEnemyIsDeadState(this.gameObject, true);
         Destroy(this.gameObject);
     }
 }

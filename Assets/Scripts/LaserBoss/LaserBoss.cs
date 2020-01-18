@@ -22,6 +22,8 @@ public class LaserBoss : MonoBehaviour
     public LaserBossAudio bossAudio;
     public Cinemachine.CinemachineVirtualCamera playerCamera;
 
+    public ToggleButton endGameButton;
+
     private void Start()
     {
         _maxHealth = 150;
@@ -79,5 +81,6 @@ public class LaserBoss : MonoBehaviour
         bossAudio.PlayDeath();
         Events.ChangeToCamera(playerCamera);
         BossHealthBar.SetActive(false);
+        endGameButton.gameObject.SetActive(true);
     }
 }
