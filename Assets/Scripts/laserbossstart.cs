@@ -9,6 +9,8 @@ public class laserbossstart : MonoBehaviour
     public GameObject bossObj;
     public GameObject bosscam;
 
+    public GameObject BossHealthBar;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -17,6 +19,7 @@ public class laserbossstart : MonoBehaviour
             roomlight.SetActive(true);
             bossObj.SetActive(true);
             bosscam.SetActive(true);
+            BossHealthBar.SetActive(true);
             Destroy(this.gameObject);
         }
     }

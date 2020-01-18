@@ -31,6 +31,7 @@ public class SpeedBossController : MonoBehaviour
     private int _maxHealth;
     private int _health;
 
+
     public bool bossAlive;
 
     private void Start()

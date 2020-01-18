@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LaserBoss : MonoBehaviour
 {
@@ -13,10 +14,25 @@ public class LaserBoss : MonoBehaviour
     public float pingpongMove;
 
     private bool _isAlive = true;
+    private int _health;
+    private int _maxHealth;
+    public Image bossHealthImage;
+    public GameObject BossHealthBar;
 
     public LaserBossAudio bossAudio;
     public Cinemachine.CinemachineVirtualCamera playerCamera;
-    
+
+    private void Start()
+    {
+        _maxHealth = 150;
+        _health = _maxHealth;
+    }
+
+    private void OnEnable()
+    {
+        bossHealthImage.fillAmount = 1;
+    }
+
     void Update()
     {
         if (_isAlive)
@@ -40,6 +56,17 @@ public class LaserBoss : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int value)
+    {
+        _health -= value;
+        bossHealthImage.fillAmount = (float)_health / _maxHealth;
+        if (_health <= 0)
+        {
+            Death();
+        }
+
+    }
+
     private void Death()
     {
 
@@ -51,5 +78,6 @@ public class LaserBoss : MonoBehaviour
         GetComponent<SpriteRenderer>().color = changeColor;
         bossAudio.PlayDeath();
         Events.ChangeToCamera(playerCamera);
+        BossHealthBar.SetActive(false);
     }
 }

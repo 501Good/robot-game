@@ -9,7 +9,7 @@ public class PlayerReviveController : MonoBehaviour
         Events.OnRespawnPlayer += RespawnPlayer;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         Events.OnRespawnPlayer -= RespawnPlayer;
     }

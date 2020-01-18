@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1207392558}
   - component: {fileID: 1207392559}
   - component: {fileID: 5876349391313301680}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StartTrigger
   m_TagString: RoomTrigger
   m_Icon: {fileID: 0}
@@ -73,6 +73,8 @@ MonoBehaviour:
   breakables: {fileID: 2461380595446495635}
   light: {fileID: 4578001936234267237}
   Boss: {fileID: 0}
+  BossHealthBar: {fileID: 0}
+  ToggleButton: {fileID: 0}
 --- !u!1 &2461380595446495635
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +201,7 @@ GameObject:
   - component: {fileID: 2147168105071609352}
   - component: {fileID: 727412288}
   - component: {fileID: 727412289}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RoomExitTrigger
   m_TagString: RoomTrigger
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -270,7 +272,7 @@ GameObject:
   - component: {fileID: 1982799956920880401}
   - component: {fileID: 1983169895}
   - component: {fileID: 1983169896}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RoomEnterTrigger
   m_TagString: RoomTrigger
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
